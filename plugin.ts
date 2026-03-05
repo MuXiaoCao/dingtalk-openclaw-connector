@@ -2496,6 +2496,7 @@ async function handleDingTalkMessage(params: {
         systemPrompts,
         sessionKey,
         gatewayAuth,
+        imageLocalPaths: imageLocalPaths.length > 0 ? imageLocalPaths : undefined,
         log,
       })) {
         fullResponse += chunk;
