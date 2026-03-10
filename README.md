@@ -89,7 +89,7 @@ openclaw plugins install -l .
       "clientSecret": "your_secret_here", // 钉钉 AppSecret
       "gatewayToken": "",                 // 可选：Gateway 认证 token, openclaw.json配置中 gateway.auth.token 的值 
       "gatewayPassword": "",              // 可选：Gateway 认证 password（与 token 二选一）
-      "sessionTimeout": 1800000,          // 可选：会话超时(ms)，默认 30 分钟
+      "groupSessionScope": "group",       // 可选：群聊会话隔离策略，group=群共享，group_sender=群内用户独立（默认：group）
       "asyncMode": false,                 // 可选：异步模式，立即回执用户消息，后台处理并推送结果（默认：false）
       "ackText": "🫡 任务已接收"      // 可选：异步模式下的回执消息文本（默认：'🫡 任务已接收，处理中...'）
     }
@@ -142,7 +142,7 @@ openclaw plugins list  # 确认 dingtalk-connector 已加载
 | `clientSecret` | `DINGTALK_CLIENT_SECRET` | 钉钉 AppSecret |
 | `gatewayToken` | `OPENCLAW_GATEWAY_TOKEN` | Gateway 认证 token（可选） |
 | `gatewayPassword` | — | Gateway 认证 password（可选，与 token 二选一） |
-| `sessionTimeout` | — | 会话超时时间，单位毫秒（默认 1800000 = 30分钟） |
+| `groupSessionScope` | — | 群聊会话隔离策略：`group`=群共享，`group_sender`=群内用户独立（默认：group） |
 | `asyncMode` | — | 异步模式，立即回执用户消息，后台处理并推送结果（默认：false） |
 | `ackText` | — | 异步模式下的回执消息文本（默认：'🫡 任务已接收，处理中...'） |
 
